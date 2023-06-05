@@ -77,6 +77,18 @@ for x in mycursor:
 '''
 
 
+#Checking if a data was captured using the SQL query to find a particular name
+
 '''
-Task 6: A customer called to check if his data was captured in the database, he said his last name is 'Akinje', write a SQL query to find out if his name is truly captured. 
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM bookings WHERE lastname ='Akinje'"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
 '''
