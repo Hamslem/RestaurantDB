@@ -21,7 +21,14 @@ TASK 1: Create a new database named 'restaurant'
 Task 2: Verify that your database is created.
 '''
 
-#mycursor.execute("SHOW DATABASES")
+'''
+mycursor = mydb.cursor()
+
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor:
+  print(x)
+'''
 
 
 '''
@@ -59,6 +66,7 @@ Task 5: Add the following into the table
 'Dorime', 'Akpan', 'pinkyqueen@mail.com', 'Table 2',
 '''
 
+'''
 mycursor = mydb.cursor()
 
 sql = "INSERT INTO Bookings (firstname, lastname, email, reservationno) VALUES (%s, %s, %s, %s)"
@@ -81,4 +89,6 @@ mycursor.executemany(sql, val)
 mydb.commit()
 
 print(mycursor.rowcount, "record was inserted.")
+
+'''
 
