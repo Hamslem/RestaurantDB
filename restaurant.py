@@ -94,10 +94,8 @@ for x in myresult:
 '''
 
 
-'''
-Task 7: Write a SQL query to find out how many occurrence of 'Daniel' is present as the first name. Make sure your query prevents SQL injection.
-'''
 
+#How many occurrence of 'Daniel' is present as the first name.(prevent SQL injection)
 mycursor = mydb.cursor()
 
 sql = "SELECT COUNT(*) FROM bookings WHERE firstname = %s"
@@ -108,7 +106,9 @@ mycursor.execute(sql, val)
 myresult = mycursor.fetchall()
 
 count = myresult[0]
-print(f"The count of occurrences for {val} is: {count}")
+
+for x in myresult:
+  print(x)
 
 
 
