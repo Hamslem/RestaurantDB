@@ -230,6 +230,7 @@ for x in myresult:
 
 #Deleting a customer records, with the email address of pinkyqueen@mail.com 
 
+'''
 mycursor = mydb.cursor()
 
 sql = "DELETE FROM bookings WHERE email = 'pinkyqueen@mail.com'"
@@ -237,5 +238,24 @@ sql = "DELETE FROM bookings WHERE email = 'pinkyqueen@mail.com'"
 mycursor.execute(sql)
 
 mydb.commit()
+
+'''
+
+
+
+#A new table named 'prevcustomer', with columns of firstname, email, reservationno. 
+
+'''
+mycursor = mydb.cursor()
+
+mycursor.execute("CREATE TABLE Prevcustomers (firstname VARCHAR(255), email VARCHAR(255), reservationno VARCHAR(255))")
+
+myresult = mycursor.fetchall()
+
+for x in mycursor:
+  print(x)
+
+'''
+
 
 
