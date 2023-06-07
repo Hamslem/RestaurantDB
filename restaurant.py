@@ -138,3 +138,21 @@ for x in myresult:
 
 '''
 
+
+#The names of those who booked Table 2
+
+'''
+mycursor = mydb.cursor()
+
+sql = "SELECT firstname FROM bookings WHERE reservationno = %s"
+reservationno = 'Table 2'
+
+mycursor.execute(sql, (reservationno,))
+
+myresult = mycursor.fetchall()
+
+
+for x in myresult:
+  print(x)
+
+'''
