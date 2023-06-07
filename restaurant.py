@@ -193,3 +193,21 @@ mycursor.execute(sql, val)
 mydb.commit()
 
 '''
+
+
+
+#Your line manager called you to notify you that the company is willing to give a 5% discount to the first 5 customers who reserved a sit at the restaurant.
+
+'''
+mycursor = mydb.cursor()
+
+sql = " SELECT firstname FROM bookings ORDER BY reservationno ASC LIMIT 5"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+'''
