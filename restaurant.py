@@ -211,3 +211,31 @@ for x in myresult:
   print(x)
 
 '''
+
+#After some while, your line manager called again to notify you that the fourth and fifth customer will instead receive a 3.5% discount. Write a SQL query to find out who they are.
+
+'''
+mycursor = mydb.cursor()
+
+sql = "SELECT firstname FROM bookings WHERE reservationno LIMIT 2 OFFSET 3"
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+
+'''
+
+
+#Deleting a customer records, with the email address of pinkyqueen@mail.com 
+
+mycursor = mydb.cursor()
+
+sql = "DELETE FROM bookings WHERE email = 'pinkyqueen@mail.com'"
+
+mycursor.execute(sql)
+
+mydb.commit()
+
+
