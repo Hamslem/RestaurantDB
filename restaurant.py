@@ -77,6 +77,7 @@ for x in mycursor:
 '''
 
 
+
 #Checking if a data was captured using the SQL query to find a particular name
 
 '''
@@ -95,7 +96,10 @@ for x in myresult:
 
 
 
+
 #How many occurrence of 'Daniel' is present as the first name.(prevent SQL injection)
+
+'''
 mycursor = mydb.cursor()
 
 sql = "SELECT COUNT(*) FROM bookings WHERE firstname = %s"
@@ -110,5 +114,27 @@ count = myresult[0]
 for x in myresult:
   print(x)
 
+'''
 
+
+
+
+#find out the most booked table
+
+'''
+mycursor = mydb.cursor()
+
+sql = "SELECT COUNT(*) FROM bookings WHERE reservationno = %s"
+val = ("Table",)
+
+mycursor.execute(sql, val)
+
+myresult = mycursor.fetchall()
+
+count = myresult[0]
+
+for x in myresult:
+  print(x)
+
+'''
 
