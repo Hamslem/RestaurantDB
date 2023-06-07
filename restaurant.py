@@ -156,3 +156,20 @@ for x in myresult:
   print(x)
 
 '''
+
+
+#First name in alphabetical order
+
+'''
+mycursor = mydb.cursor()
+
+sql = "SELECT * FROM bookings ORDER BY firstname"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+  
+'''
