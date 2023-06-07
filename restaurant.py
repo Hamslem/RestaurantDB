@@ -258,4 +258,13 @@ for x in mycursor:
 '''
 
 
+#Delete the table 'Prevcustomers' as it doesn't impact business operations.
 
+'''
+mycursor = mydb.cursor()
+
+sql = "DROP TABLE Prevcustomers"
+
+mycursor.execute(sql)
+
+'''
