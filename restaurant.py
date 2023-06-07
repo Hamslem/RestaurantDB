@@ -171,5 +171,25 @@ myresult = mycursor.fetchall()
 
 for x in myresult:
   print(x)
-  
+
+'''
+
+
+
+#A customer whose email address is gab@mail.com wants to change his reservation number to Table 5
+
+'''
+mycursor = mydb.cursor()
+
+sql = "UPDATE bookings SET reservationno = %s WHERE email = %s"
+
+val = ("new_reservationno", "email")
+
+email = "gab@mail.com"
+new_reservationno = "Table 5"
+
+mycursor.execute(sql, val)
+
+mydb.commit()
+
 '''
